@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import PropTypes from 'prop-types';
 import './App.css';
 
 //function App() {
@@ -9,7 +9,7 @@ const App = () => {
     {name:"ichiro",age:10},
     {name:"jiro",age:20},
     {name:"saburo",age:30},
-    {name:"shiro"}
+    {name:"shiro",age:40}
   ];
   /*
   <User name={"ichiro"} age={"10"} />
@@ -50,7 +50,14 @@ const User = (props) => {
   );
 }
 
+/*
 User.defaultProps = {
   age:99
-};
+}
+*/
+
+User.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number.isRequired
+}
 export default App;
